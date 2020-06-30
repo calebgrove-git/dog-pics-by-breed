@@ -40,6 +40,7 @@ function displayResults(responseJSON) {
   }
   if (responseJSON.status === 'error') {
     $('#section').append(errorHTML(responseJSON));
+    console.log(responseJSON);
     throw responseJSON.message;
   }
 }
