@@ -24,7 +24,6 @@ function getDogPic() {
     .catch((error) => alert(error));
 }
 function imageHTML(responseJSON) {
-  console.log(responseJSON);
   return `<img src="` + responseJSON.message + `">`;
 }
 function errorHTML(responseJSON) {
@@ -35,12 +34,12 @@ function errorHTML(responseJSON) {
   );
 }
 function displayResults(responseJSON) {
+  console.log(responseJSON);
   if (responseJSON.status === 'success') {
     $('#section').append(imageHTML(responseJSON));
   }
   if (responseJSON.status === 'error') {
     $('#section').append(errorHTML(responseJSON));
-    console.log(responseJSON);
     throw responseJSON.message;
   }
 }
